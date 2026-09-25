@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Boyfriend's Day</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="stars">
+    <span style="top:8%;left:8%;">★</span><span style="top:14%;right:10%;">♡</span>
+    <span style="top:70%;left:6%;">★</span><span style="top:60%;right:8%;">★</span>
+    <span style="top:40%;left:88%;">♡</span><span style="top:85%;left:40%;">★</span>
+  </div>
+  <div class="dots" id="dots"></div>
+
+  <!-- 0 cover -->
+  <section class="screen active" data-screen>
+    <h1>♡ happy<br>Boyfriend's<br>Day ♡</h1>
+    <svg class="bunny" onclick="next()" viewBox="0 0 120 130">
+      <ellipse cx="42" cy="24" rx="11" ry="30" fill="#ffeef4" stroke="#e8a9c4" stroke-width="2.5"/>
+      <ellipse cx="42" cy="26" rx="5" ry="20" fill="#f6b9d1"/>
+      <ellipse cx="74" cy="24" rx="11" ry="30" fill="#ffeef4" stroke="#e8a9c4" stroke-width="2.5"/>
+      <ellipse cx="74" cy="26" rx="5" ry="20" fill="#f6b9d1"/>
+      <ellipse cx="58" cy="82" rx="42" ry="38" fill="#fff6f9" stroke="#e8a9c4" stroke-width="2.5"/>
+      <ellipse cx="30" cy="88" rx="9" ry="13" fill="#fff6f9" stroke="#e8a9c4" stroke-width="2"/>
+      <ellipse cx="86" cy="88" rx="9" ry="13" fill="#fff6f9" stroke="#e8a9c4" stroke-width="2"/>
+      <circle cx="42" cy="78" r="10" fill="#fbd4e2" opacity=".7"/>
+      <circle cx="74" cy="78" r="10" fill="#fbd4e2" opacity=".7"/>
+      <circle cx="45" cy="76" r="3.2" fill="#5c4a52"/><circle cx="71" cy="76" r="3.2" fill="#5c4a52"/>
+      <path d="M52 88 Q58 93 64 88" stroke="#5c4a52" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <ellipse cx="58" cy="86" rx="4" ry="3" fill="#e8578f"/>
+      <path d="M50 30 Q58 20 66 30 L60 36 Z" fill="#e8578f"/>
+    </svg>
+    <div class="tap-me">tap me</div>
+  </section>
+
+  <!-- 1 bouquets -->
+  <section class="screen" data-screen>
+    <h2>click on any bouquet<br>to open</h2>
+    <div class="bouquet-row">
+      <div class="bouquet photo-slot" data-key="bq1" onclick="bouquetTap(this)"><span>tap to add<br>bouquet photo</span></div>
+      <div class="bouquet photo-slot" data-key="bq2" onclick="bouquetTap(this)"><span>tap to add<br>bouquet photo</span></div>
+      <div class="bouquet photo-slot" data-key="bq3" onclick="bouquetTap(this)"><span>tap to add<br>bouquet photo</span></div>
+    </div>
+    <div class="letter-reveal" id="bouquetMsg">for the boy who makes<br>every day feel like this ♡</div>
+  </section>
+
+  <!-- 2 you're -->
+  <section class="screen" data-screen>
+    <h2>you're</h2>
+    <div class="photo-slot frame-big" data-key="p1" onclick="pickPhoto(this)"><span>tap to add photo</span></div>
+    <div class="names" contenteditable="true" data-key="names">my pookie · my love · my life<br>my baby · my sweetheart<br>my soulmate · my forever</div>
+  </section>
+
+  <!-- 3 collage -->
+  <section class="screen" data-screen>
+    <h2>my favorite<br>person</h2>
+    <div class="collage">
+      <div class="photo-slot" data-key="c1" onclick="pickPhoto(this)">+</div>
+      <div class="photo-slot" data-key="c2" onclick="pickPhoto(this)">+</div>
+      <div class="photo-slot" data-key="c3" onclick="pickPhoto(this)">+</div>
+      <div class="photo-slot" data-key="c4" onclick="pickPhoto(this)">+</div>
+      <div class="photo-slot" data-key="c5" onclick="pickPhoto(this)">+</div>
+      <div class="photo-slot" data-key="c6" onclick="pickPhoto(this)">+</div>
+    </div>
+  </section>
+
+  <!-- 4 song -->
+  <section class="screen" data-screen>
+    <h2>our song</h2>
+    <div class="song-card">
+      <div class="song-cover" id="songCover" onclick="pickAudio()">tap to add your song</div>
+      <div class="song-title" contenteditable="true" data-key="songtitle">Until I Found You ♡</div>
+      <div class="eq" id="eq"><span></span><span></span><span></span><span></span></div>
+      <button class="play-btn" id="playBtn" onclick="toggleAudio()">▶</button>
+    </div>
+    <audio id="audio"></audio>
+  </section>
+
+  <!-- 5 letter -->
+  <section class="screen" data-screen>
+    <h2>the sweet letter</h2>
+    <div class="photo-slot stamp-frame" data-key="p2" onclick="pickPhoto(this)"><span>tap to add photo</span></div>
+    <div class="letter-text" contenteditable="true" data-key="letter">If I could love you for one more day, I would love you for one more day. Thank you for always being mine.</div>
+    <div class="sign" contenteditable="true" data-key="signature">With love, always ♡</div>
+  </section>
+
+  <!-- 6 final -->
+  <section class="screen final" data-screen>
+    <div class="stage-bg"></div>
+    <div class="hearts">
+      <span style="left:15%; animation-delay:0s;">♡</span>
+      <span style="left:45%; animation-delay:1.2s;">♡</span>
+      <span style="left:75%; animation-delay:2.1s;">♡</span>
+      <span style="left:30%; animation-delay:.6s;">♡</span>
+      <span style="left:60%; animation-delay:1.8s;">♡</span>
+    </div>
+    <h2 contenteditable="true" data-key="finaltext" style="position:relative;">everyday i am thankful i'm<br>lucky enough to have<br>you in my life ♡</h2>
+    <svg class="couple" style="position:relative;" width="180" height="140" viewBox="0 0 180 140">
+      <ellipse cx="60" cy="90" rx="28" ry="32" fill="#fff" stroke="#5c4a52" stroke-width="2.5"/>
+      <path d="M38 62 L44 44 L52 62Z" fill="#fff" stroke="#5c4a52" stroke-width="2.5"/>
+      <path d="M68 62 L76 44 L82 62Z" fill="#fff" stroke="#5c4a52" stroke-width="2.5"/>
+      <path d="M40 78 Q60 70 80 78" stroke="#5c4a52" stroke-width="2" fill="none"/>
+      <circle cx="52" cy="82" r="3" fill="#5c4a52"/><circle cx="68" cy="82" r="3" fill="#5c4a52"/>
+      <path d="M56 90 Q60 93 64 90" stroke="#5c4a52" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M55 66 l3 3 l3 -3 l3 3 l3 -3" stroke="#5c4a52" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M60 100 l-6 8 l12 0 Z" fill="#f6a6c1" opacity=".8"/>
+
+      <ellipse cx="122" cy="92" rx="27" ry="30" fill="#fff" stroke="#5c4a52" stroke-width="2.5"/>
+      <ellipse cx="105" cy="56" rx="8" ry="22" fill="#fff" stroke="#5c4a52" stroke-width="2.5"/>
+      <ellipse cx="105" cy="58" rx="3.5" ry="14" fill="#f6b9d1"/>
+      <ellipse cx="132" cy="56" rx="8" ry="22" fill="#fff" stroke="#5c4a52" stroke-width="2.5"/>
+      <ellipse cx="132" cy="58" rx="3.5" ry="14" fill="#f6b9d1"/>
+      <circle cx="113" cy="86" r="3" fill="#5c4a52"/><circle cx="130" cy="86" r="3" fill="#5c4a52"/>
+      <path d="M117 94 Q122 97 126 94" stroke="#5c4a52" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="106" cy="90" r="5" fill="#fbd4e2" opacity=".6"/><circle cx="137" cy="90" r="5" fill="#fbd4e2" opacity=".6"/>
+      <path d="M122 104 l-6 8 l12 0 Z" fill="#f6a6c1" opacity=".8"/>
+
+      <path d="M83 100 Q91 92 99 100" stroke="#5c4a52" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <button class="restart" style="position:relative;" onclick="goTo(0)">↺ replay</button>
+  </section>
+</div>
+
+<button class="arrow-next" id="nextBtn" onclick="next()">›</button>
+<input type="file" id="fileInput" accept="image/*">
+<input type="file" id="audioInput" accept="audio/*">
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+:root{
+  --pink:#f6a6c1; --pink-dark:#e8578f; --pink-deep:#d94b83;
+  --blue:#dbeefc; --white:#ffffff; --text:#5c4a52; --gold:#f6d34c;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;}
+html,body{height:100%;margin:0;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+body{
+  font-family:'Poppins',sans-serif; color:var(--text); overflow:hidden;
+  background:
+    repeating-linear-gradient(115deg, var(--blue) 0 40px, #eef7fd 40px 80px);
+}
+.stage{position:relative; width:100%; height:100dvh; overflow:hidden;}
+.stars span{position:absolute; font-size:22px; color:var(--pink); opacity:.55; animation:float 6s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-12px) rotate(12deg);}}
+
+.screen{
+  position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:32px 20px calc(90px + env(safe-area-inset-bottom,0px));
+  text-align:center; opacity:0; pointer-events:none; transform:scale(.96);
+  transition:opacity .5s ease, transform .5s ease;
+}
+.screen.active{opacity:1; pointer-events:auto; transform:scale(1);}
+
+h1,h2{font-family:'Caveat',cursive; color:var(--pink-deep); text-shadow:1px 1px 0 #fff, 2px 2px 0 rgba(233,120,160,.35); margin:0 0 8px;}
+h1{font-size:52px; line-height:1.15;}
+h2{font-size:38px;}
+p.sub{font-size:14px; color:#8a7480; margin-top:0;}
+
+.arrow-next{
+  position:absolute; right:18px; bottom:calc(28px + env(safe-area-inset-bottom,0px));
+  width:52px; height:52px; border-radius:50%; background:var(--pink-dark); color:#fff;
+  border:none; font-size:22px; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 14px rgba(216,80,130,.4); cursor:pointer; z-index:5;
+}
+.arrow-next:active{transform:scale(.92);}
+.dots{position:absolute; top:calc(14px + env(safe-area-inset-top,0px)); left:0; right:0; display:flex; justify-content:center; gap:6px; z-index:5;}
+.dots i{width:6px; height:6px; border-radius:50%; background:#d99cb6; opacity:.4;}
+.dots i.on{opacity:1; background:var(--pink-dark);}
+
+/* Cover */
+.bunny{width:150px; cursor:pointer; filter:drop-shadow(0 8px 10px rgba(0,0,0,.12)); animation:wiggle 2.4s ease-in-out infinite;}
+@keyframes wiggle{0%,100%{transform:rotate(-3deg);}50%{transform:rotate(3deg);}}
+.tap-me{margin-top:10px; background:#fff; border:2px solid var(--pink-dark); color:var(--pink-dark);
+  font-weight:600; font-size:13px; padding:6px 16px; border-radius:20px;}
+
+/* Bouquets */
+.bouquet-row{display:flex; gap:14px; margin-top:18px;}
+.bouquet{width:84px; height:112px; border-radius:12px; cursor:pointer; transition:transform .3s; font-size:11px; padding:6px;}
+.bouquet:active{transform:scale(.94);}
+.bouquet.opened{animation:pop .55s ease;}
+@keyframes pop{0%{transform:scale(1);}40%{transform:scale(1.25) rotate(-4deg);}100%{transform:scale(1.08);}}
+.letter-reveal{margin-top:18px; max-width:280px; font-family:'Caveat',cursive; font-size:24px; color:var(--pink-deep); opacity:0; transition:opacity .5s;}
+.letter-reveal.show{opacity:1;}
+
+/* photo slots */
+.photo-slot{
+  background:#fdf1f5 center/cover no-repeat; border:3px dashed var(--pink);
+  border-radius:14px; display:flex; align-items:center; justify-content:center;
+  color:#c98aa6; font-size:12px; cursor:pointer; overflow:hidden;
+}
+.photo-slot.filled{border-style:solid;}
+.frame-big{width:230px; height:200px; border:8px solid #fff; outline:3px solid var(--pink-dark); border-radius:6px; margin:14px auto 0; box-shadow:0 10px 18px rgba(0,0,0,.15);}
+.names{margin-top:10px; font-size:15px; line-height:1.9; color:#7a5c68;}
+
+.collage{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; width:280px; margin-top:14px;}
+.collage .photo-slot{height:76px; border-radius:10px;}
+.collage .photo-slot:nth-child(2){transform:rotate(-3deg);}
+.collage .photo-slot:nth-child(4){transform:rotate(2deg);}
+.collage .photo-slot:nth-child(6){transform:rotate(-2deg);}
+
+/* song */
+.song-card{width:270px; background:#fff; border-radius:18px; padding:16px; box-shadow:0 10px 20px rgba(0,0,0,.1); margin-top:10px;}
+.song-cover{width:100%; height:130px; border-radius:12px; background:linear-gradient(135deg,#f7c8dc,#f2a3c5); display:flex; align-items:center; justify-content:center; color:#fff; font-size:13px; cursor:pointer;}
+.song-title{font-family:'Caveat',cursive; font-size:22px; color:var(--pink-deep); margin-top:10px;}
+.eq{display:flex; gap:3px; align-items:flex-end; height:18px; margin:8px 0;}
+.eq span{width:4px; background:var(--pink-dark); border-radius:2px; height:4px;}
+.eq.playing span{animation:bar 1s ease-in-out infinite;}
+.eq span:nth-child(2){animation-delay:.15s;} .eq span:nth-child(3){animation-delay:.3s;} .eq span:nth-child(4){animation-delay:.45s;}
+@keyframes bar{0%,100%{height:4px;}50%{height:17px;}}
+.play-btn{width:44px; height:44px; border-radius:50%; background:var(--pink-dark); color:#fff; border:none; font-size:16px;}
+
+/* letter */
+.stamp-frame{
+  width:180px; height:200px; background-color:#fdf1f5;
+  border:10px solid #fff; margin-bottom:12px; position:relative; border-radius:4px;
+  box-shadow:0 8px 16px rgba(0,0,0,.14);
+  outline:3px dashed var(--pink-dark); outline-offset:-16px;
+}
+.stamp-frame::before,.stamp-frame::after{content:'♡'; position:absolute; color:var(--pink-dark); font-size:16px; opacity:.85;}
+.stamp-frame::before{top:-12px; left:-12px;} .stamp-frame::after{bottom:-12px; right:-12px;}
+.letter-text{font-family:'Caveat',cursive; font-size:20px; color:#6b4f5c; max-width:280px; line-height:1.5; outline:none;}
+.sign{margin-top:8px; font-family:'Caveat',cursive; font-size:20px; color:var(--pink-deep);}
+
+/* final */
+.final .stage-bg{position:absolute; inset:0; background:#fbe4ee;}
+.hearts span{position:absolute; color:var(--pink-dark); opacity:.5; font-size:18px; animation:rise 5s linear infinite;}
+@keyframes rise{0%{transform:translateY(0);opacity:.6;}100%{transform:translateY(-160px);opacity:0;}}
+.couple{margin:10px 0;}
+.restart{margin-top:14px; background:none; border:1px solid var(--pink-dark); color:var(--pink-dark); padding:6px 16px; border-radius:20px; font-size:12px;}
+[contenteditable]{border-bottom:1px dashed transparent;}
+[contenteditable]:focus{border-bottom:1px dashed var(--pink);}
+input[type=file]{display:none;}
