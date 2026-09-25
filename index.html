@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Boyfriend's Day</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&family=Bagel+Fat+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stars-bg" id="starsBg"></div>
+
+<!-- PAGE 1 : LANDING -->
+<section class="page active" id="page-1">
+  <div class="hearts-row">
+    <span class="heart-icon">❤</span>
+    <h1 class="title-script">Happy<br>Boyfriend's Day</h1>
+    <span class="heart-icon">❤</span>
+  </div>
+  <button class="bunny-btn corner-br" id="btnToPage2" aria-label="Enter">
+    <span class="bunny-emoji">🐰</span>
+  </button>
+</section>
+
+<!-- PAGE 2 : BOUQUET HUB -->
+<section class="page" id="page-2">
+  <h2 class="subtitle-script">Click on any bouquet to open</h2>
+  <div class="bouquet-row">
+    <button class="bouquet-card" data-target="b1-1">
+      <div class="bouquet-emoji">💐</div>
+      <span class="bouquet-label">Bouquet 1</span>
+    </button>
+    <button class="bouquet-card" data-target="b2-1">
+      <div class="bouquet-emoji">🌸</div>
+      <span class="bouquet-label">Bouquet 2</span>
+    </button>
+    <button class="bouquet-card" data-target="b3-1">
+      <div class="bouquet-emoji">🌷</div>
+      <span class="bouquet-label">Bouquet 3</span>
+    </button>
+  </div>
+  <button class="heart-nav-btn" id="btnToFinal" title="A little something extra">💕</button>
+</section>
+
+<!-- BOUQUET 1, PAGE 1 : YOU'RE... -->
+<section class="page" id="b1-1">
+  <div class="youre-wrap">
+    <h2 class="title-script small">You're</h2>
+    <div class="youre-body">
+      <div class="photo-frame">
+        <img src="photos/photo1.jpg" alt="your photo here" id="b1Photo">
+      </div>
+      <div class="scroll-list-wrap">
+        <ul class="scroll-list" id="scrollList">
+          <!-- filled by JS from PHRASES array, duplicated for seamless loop -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <button class="arrow-btn corner-br" data-target="b1-2">›</button>
+  <button class="back-btn corner-tl" data-target="page-2">‹</button>
+</section>
+
+<!-- BOUQUET 1, PAGE 2 : COLLAGE -->
+<section class="page" id="b1-2">
+  <div class="collage-grid" id="collageGrid">
+    <!-- 6 photo slots filled by JS with fly-in animation classes -->
+  </div>
+  <div class="bunny-corner corner-bl">🐰</div>
+  <button class="arrow-btn corner-br" data-target="page-2">›</button>
+  <button class="back-btn corner-tl" data-target="b1-1">‹</button>
+</section>
+
+<!-- BOUQUET 2, PAGE 1 : VIDEO -->
+<section class="page" id="b2-1">
+  <div class="video-card">
+    <div class="video-frame" id="videoFrame">
+      <video id="mainVideo" poster="photos/video-poster.jpg" playsinline>
+        <source src="videos/until-i-found-you.mp4" type="video/mp4">
+      </video>
+      <button class="play-overlay-btn" id="playOverlayBtn">▶</button>
+    </div>
+    <div class="video-caption">
+      <p class="video-title">Until I Found You</p>
+      <p class="video-artist">Stephen Sanchez ft. Em Beihold <em>(Lyric Video)</em></p>
+    </div>
+    <div class="video-controls">
+      <button id="likeBtn" class="ctrl-icon">♡</button>
+      <button id="playBtn" class="ctrl-icon play">▶</button>
+      <input type="range" id="seekBar" class="seek-bar" value="0" min="0" max="100">
+      <button id="muteBtn" class="ctrl-icon">🔊</button>
+    </div>
+  </div>
+  <div class="bunny-corner corner-bl">🐰</div>
+  <button class="arrow-btn corner-br" data-target="page-2">›</button>
+  <button class="back-btn corner-tl" data-target="page-2">‹</button>
+</section>
+
+<!-- BOUQUET 3, PAGE 1 : LETTER -->
+<section class="page" id="b3-1">
+  <div class="letter-wrap">
+    <div class="stamp-frame">
+      <img src="photos/photo2.jpg" alt="your photo here" id="b3Photo">
+      <div class="stamp-tag">I love you</div>
+    </div>
+    <div class="letter-body">
+      <h2 class="title-script">The Sweet Letter</h2>
+      <p class="letter-text" id="letterText">
+        If I could live you for one more day, I would live you for one more day. I would look at you every time I wanted to and hold you every time you needed. I get ready to watch you for always jumping off the wagons though even when you're gone, my hurts don't fade at all. I don't wish for you to be here anymore, but only for you to be yourself, but as a version of us.
+      </p>
+      <p class="letter-sign">With love, Dimple</p>
+    </div>
+  </div>
+  <button class="arrow-btn corner-br" data-target="page-2">›</button>
+  <button class="back-btn corner-tl" data-target="page-2">‹</button>
+</section>
+
+<!-- FINAL PAGE -->
+<section class="page" id="page-final">
+  <div class="final-hearts" id="finalHearts"></div>
+  <h2 class="final-text">
+    everyday i am thankful i'm lucky enough<br>to have you in my life <span class="heart-icon small">❤</span>
+  </h2>
+  <div class="cat-bunny-pair">
+    <span class="pair-emoji">🐱</span>
+    <span class="pair-emoji">🐰</span>
+  </div>
+  <button class="back-btn corner-tl" data-target="page-2">‹</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
