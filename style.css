@@ -385,43 +385,39 @@
   .confetti-field { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
 
   /* ---------- balloon that flies up after the cake is cut ---------- */
-  .balloon-field { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+  .balloon-field { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 6; }
   .balloon {
     position: absolute;
-    left: 52%;
-    bottom: 40%;
-    width: 30px;
-    height: 38px;
-    margin-left: -15px;
+    bottom: -180px;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     background: radial-gradient(circle at 32% 28%, var(--pink-pop), var(--love-red-strong) 70%);
-    box-shadow: inset -4px -6px 8px rgba(0,0,0,0.15);
+    box-shadow: inset -8px -12px 16px rgba(0,0,0,0.15);
     animation: balloon-rise 2.6s cubic-bezier(.4,0,.2,1) forwards;
   }
   .balloon::after {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: -6px;
+    bottom: -6%;
     width: 0; height: 0;
-    margin-left: -4px;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 6px solid var(--love-red-strong);
+    margin-left: -6px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 9px solid var(--love-red-strong);
   }
   .balloon-string {
     position: absolute;
     left: 50%;
     top: 100%;
-    width: 1px;
-    height: 34px;
+    width: 1.5px;
+    height: 70px;
     background: var(--cream);
     opacity: 0.55;
   }
   @keyframes balloon-rise {
     0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
-    80% { opacity: 1; }
-    100% { transform: translateY(-260px) translateX(var(--balloon-drift, 0px)) rotate(4deg); opacity: 0; }
+    85% { opacity: 1; }
+    100% { transform: translateY(-140vh) translateX(var(--balloon-drift, 0px)) rotate(4deg); opacity: 0; }
   }
   @media (prefers-reduced-motion: reduce) {
     .balloon { animation: none; opacity: 0; }
