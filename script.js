@@ -217,10 +217,10 @@ function buildMessageSlide() {
         This page is for reading only on the live site — edit the text
         in this file, not on the page itself.
       -->
-      <p class="letter-text">Happy Birthday, Chavi... oops, sorry — Chotuu Badmash 😜😜. Yes, I said it, and no, I'm not taking it back, because that's exactly who you are to me — the one person who can go from giving me the wisest advice to being the biggest troublemaker in the same five minutes.</p>
-      <p class="letter-text">I hope this year brings you everything you've ever wanted in life — the big dreams you talk about out loud and the quiet little ones you keep to yourself. Whatever it is, I hope it finds its way to you easily, and right when you need it most. ❤️❤️</p>
-      <p class="letter-text">My dear best friend, I've always wanted you to become a great person — and the truth is, you already are one. I've watched you grow, stumble, laugh it off, and come back stronger every single time, and it makes me so proud to call you my best friend.</p>
-      <p class="letter-text">Happy birthday, Chotuu. I mean every word of this.</p>
+      <p class="letter-text">Happy Birthday, Chavi... oops, sorry — Chotuu Badmash 😜😜. Yes, I said it, and no, I'm not taking it back, because that's exactly who you are to me. One minute you're the one giving me the wisest, most level-headed advice, and the next you're the biggest troublemaker in the room, dragging me into whatever chaos you've cooked up — and somehow I wouldn't have it any other way.</p>
+      <p class="letter-text">I hope this year brings you everything you've ever wanted in life — the big, loud dreams you talk about for hours, and the small, quiet ones you never say out loud but I know you carry anyway. I hope every plan you've been holding onto starts falling into place, every hard day gets balanced out by ten good ones, and every wish you make this year finds its way back to you, right when you need it most. ❤️❤️</p>
+      <p class="letter-text">My dear best friend, I've always wanted you to become a great person — and the truth is, you already are one. I've watched you grow through things that weren't easy, stumble, dust yourself off, laugh about it later, and come back stronger every single time. That's not luck, that's just who you are, and it makes me endlessly proud to be the one who gets to call you my best friend.</p>
+      <p class="letter-text">So here's to you, Chotuu — to another year of your chaos, your kindness, your ridiculous humor, and everything that makes you, you. Happy birthday. I mean every single word of this, today and always.</p>
     </div>
     <div class="cta-row" style="margin-top:22px;">
       <button class="btn continue-btn">Continue</button>
@@ -514,9 +514,9 @@ function spawnBalloon(field) {
     const balloon = document.createElement('div');
     balloon.className = 'balloon';
     const delay = Math.random() * BALLOON_MAX_DELAY_MS;
-    const drift = Math.random() * 140 - 70;
-    const size = 24 + Math.random() * 14;
-    balloon.style.left = (10 + Math.random() * 80) + '%';
+    const drift = Math.random() * 180 - 90;
+    const size = 90 + Math.random() * 90; // big balloons that fill the screen
+    balloon.style.left = (Math.random() * 100) + 'vw';
     balloon.style.width = size + 'px';
     balloon.style.height = (size * 1.28) + 'px';
     balloon.style.marginLeft = (-size / 2) + 'px';
