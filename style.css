@@ -493,3 +493,12 @@ body {
 .stamp-tag { background: var(--pink-dark); color: #000; }
 .final-text { text-shadow: 2px 2px 0 #000; }
 .video-artist { color: #aab4e8; }
+
+/* hero shield button (replaces the heart, leads to the final page) */
+.heart-nav-btn.shield-btn {
+  width: 66px; height: 66px; border-radius: 50%; border: 3px solid #000;
+  background: radial-gradient(circle, #1f3fbf 0 30%, #fff 30% 45%, #e62429 45% 70%, #fff 70% 82%, #e62429 82% 100%);
+  box-shadow: 3px 3px 0 var(--pink-dark);
+  display: flex; align-items: center; justify-content: center;
+}
+.shield-btn::after { content: "★"; color: #fff; font-size: 1.5rem; text-shadow: 0 0 2px #000; }
