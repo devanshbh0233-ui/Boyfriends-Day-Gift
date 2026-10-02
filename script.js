@@ -26,7 +26,7 @@ const COLLAGE_PHOTOS = [
 
 // Letter text on bouquet 3
 const LETTER_TEXT = "Happy Boyfriend's Day! Thank you for being the person who makes ordinary days feel special. You don't need a mask or a cape to be my hero. You make me laugh when I'm tired, you make me feel safe when everything feels loud, and you turn the smallest moments into my favorite ones. I'm so lucky to be loved by you, and I'll keep choosing you, every single day.";
-const LETTER_SIGNATURE = "With love, Dimple";
+const LETTER_SIGNATURE = "With love, Nidhi";
 
 /* ============================================================
    PAGE NAVIGATION
