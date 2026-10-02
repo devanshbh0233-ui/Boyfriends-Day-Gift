@@ -489,3 +489,10 @@ body {
   display: flex; align-items: center; justify-content: center;
 }
 .shield-btn::after { content: "★"; color: #fff; font-size: 1.5rem; text-shadow: 0 0 2px #000; }
+/* ===== MAROON FONT ===== */
+:root { --maroon: #800000; }
+.title-script, .subtitle-script, .heart-icon, .tagline,
+.bouquet-label, .scroll-list li, .letter-text, .letter-sign,
+.video-title, .video-artist, .final-text, .tap-hint, .ctrl-icon {
+  color: var(--maroon);
+}
