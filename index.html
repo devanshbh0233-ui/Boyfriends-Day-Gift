@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Boyfriend's Day</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stars-bg" id="starsBg"></div>
+
+<!-- PAGE 1 : LANDING -->
+<section class="page active" id="page-1">
+  <div class="hearts-row">
+    <span class="heart-icon">❤</span>
+    <h1 class="title-script">Happy Boyfriend's Day<br>to my Peter Parker</h1>
+    <span class="heart-icon">❤</span>
+  </div>
+  <p class="tagline">with great love comes great cuddles</p>
+  <button class="bunny-btn corner-br" id="btnToPage2" aria-label="Enter">
+    <span class="tap-hint">tap me!</span>
+    <svg class="bunny-svg" viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="46" cy="30" rx="10" ry="26" fill="#e62429" stroke="#000" stroke-width="3"/>
+      <ellipse cx="74" cy="30" rx="10" ry="26" fill="#e62429" stroke="#000" stroke-width="3"/>
+      <ellipse cx="46" cy="34" rx="4.5" ry="16" fill="#8f1218"/>
+      <ellipse cx="74" cy="34" rx="4.5" ry="16" fill="#8f1218"/>
+      <circle cx="60" cy="80" r="38" fill="#e62429" stroke="#000" stroke-width="3"/>
+      <path d="M60 42V118M60 80H22M60 80H98M60 80L30 54M60 80L90 54M60 80L30 106M60 80L90 106" stroke="#000" stroke-width="1.5" fill="none" opacity=".5"/><ellipse cx="46" cy="75" rx="9" ry="7" fill="#fff" stroke="#000" stroke-width="2.5" transform="rotate(-14 46 75)"/>
+      <ellipse cx="74" cy="75" rx="9" ry="7" fill="#fff" stroke="#000" stroke-width="2.5" transform="rotate(14 74 75)"/>
+      <ellipse cx="60" cy="86" rx="4" ry="3" fill="#000"/>
+      <path d="M52 92 Q60 98 68 92" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      
+      
+    </svg>
+  </button>
+</section>
+
+<!-- PAGE 2 : BOUQUET HUB -->
+<section class="page" id="page-2">
+  <h2 class="subtitle-script">Pick a bouquet, hero</h2>
+  <div class="bouquet-row">
+    <button class="bouquet-card" data-target="b1-1">
+      <div class="bouquet-photo"><img src="photos/bouquet1.jpg" alt="bouquet 1"></div>
+      <span class="bouquet-label">🕷️ Spidey</span>
+    </button>
+    <button class="bouquet-card" data-target="b2-0">
+      <div class="bouquet-photo"><img src="photos/bouquet2.jpg" alt="bouquet 2"></div>
+      <span class="bouquet-label">🦇 Batman</span>
+    </button>
+    <button class="bouquet-card" data-target="b3-1">
+      <div class="bouquet-photo"><img src="photos/bouquet3.jpg" alt="bouquet 3"></div>
+      <span class="bouquet-label">💌 Hero's Letter</span>
+    </button>
+  </div>
+  <button class="heart-nav-btn shield-btn" id="btnToFinal" aria-label="One more surprise" title="One more surprise"></button>
+</section>
+
+<!-- BOUQUET 1, PAGE 1 : YOU'RE... -->
+<section class="page" id="b1-1">
+  <div class="youre-wrap">
+    <h2 class="title-script small">You're</h2>
+    <div class="youre-body">
+      <div class="photo-frame">
+        <img src="photos/photo1.jpg" alt="your photo here" id="b1Photo">
+      </div>
+      <div class="scroll-list-wrap">
+        <ul class="scroll-list" id="scrollList">
+          <!-- filled by JS from PHRASES array, duplicated for seamless loop -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <button class="arrow-btn corner-br" aria-label="Next" data-target="b1-2">›</button>
+  <button class="back-btn corner-tl" aria-label="Back" data-target="page-2">‹</button>
+</section>
+
+<!-- BOUQUET 1, PAGE 2 : COLLAGE -->
+<section class="page" id="b1-2">
+  <div class="collage-grid" id="collageGrid">
+    <!-- photo slots filled by JS, arranged to fill a heart-shaped clip mask -->
+  </div>
+  <div class="bunny-corner corner-bl">
+    <svg class="bunny-svg small" viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="46" cy="30" rx="10" ry="26" fill="#1c1c24" stroke="#ffd400" stroke-width="3"/>
+      <ellipse cx="74" cy="30" rx="10" ry="26" fill="#1c1c24" stroke="#ffd400" stroke-width="3"/>
+      <ellipse cx="46" cy="34" rx="4.5" ry="16" fill="#ffd400"/>
+      <ellipse cx="74" cy="34" rx="4.5" ry="16" fill="#ffd400"/>
+      <circle cx="60" cy="80" r="38" fill="#1c1c24" stroke="#ffd400" stroke-width="3"/>
+      <ellipse cx="60" cy="54" rx="10" ry="5.5" fill="#ffd400" stroke="#000" stroke-width="1.5"/><path d="M51 54l4-3 2 2h6l2-2 4 3-4 1-2-1h-6l-2 1z" fill="#000"/><ellipse cx="46" cy="75" rx="8" ry="4" fill="#fff" transform="rotate(12 46 75)"/>
+      <ellipse cx="74" cy="75" rx="8" ry="4" fill="#fff" transform="rotate(-12 74 75)"/>
+      <ellipse cx="60" cy="86" rx="4" ry="3" fill="#ffd400"/>
+      <path d="M52 92 Q60 98 68 92" stroke="#ffd400" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      
+      
+    </svg>
+  </div>
+  <button class="arrow-btn corner-br" aria-label="Next" data-target="page-2">›</button>
+  <button class="back-btn corner-tl" aria-label="Back" data-target="b1-1">‹</button>
+</section>
+
+<!-- BOUQUET 2, PAGE 1 : CERTIFICATE -->
+<section class="page" id="b2-0">
+  <div class="certificate">
+    <div class="cert-inner">
+      <p class="cert-small">Official Hero Registry presents the</p>
+      <h2 class="cert-title">Best Boyfriend Certificate</h2>
+      <p class="cert-small">This certificate is proudly awarded to</p>
+      <p class="cert-name">Nitin Yadav</p>
+      <p class="cert-text">for being the sweetest, funniest and most caring boyfriend in every universe, for saving my bad days without a cape, and for making ordinary moments feel like a movie.</p>
+      <div class="cert-footer">
+        <div class="cert-sign"><span>Nidhi Lohima</span><small>Signed with love</small></div>
+        <div class="cert-seal">★</div>
+        <div class="cert-sign"><span>No. 1</span><small>Rank: Forever</small></div>
+      </div>
+    </div>
+  </div>
+  <button class="arrow-btn corner-br" aria-label="Next" data-target="b2-1">›</button>
+  <button class="back-btn corner-tl" aria-label="Back" data-target="page-2">‹</button>
+</section>
+
+<!-- BOUQUET 2, PAGE 2 : VIDEO -->
+<section class="page" id="b2-1">
+  <div class="video-card">
+    <div class="video-frame" id="videoFrame">
+      <video id="mainVideo" poster="photos/video-poster.jpg" playsinline>
+        <source src="videos/baby-now-that-ive-found-you.mp4" type="video/mp4">
+      </video>
+      <button class="play-overlay-btn" id="playOverlayBtn">▶</button>
+    </div>
+    <div class="video-caption">
+      <p class="video-title">Baby Now That I've Found You</p>
+      <p class="video-artist">The Foundations <em>(Lyric Video)</em></p>
+    </div>
+    <div class="video-controls">
+      <button id="likeBtn" class="ctrl-icon">♡</button>
+      <button id="playBtn" class="ctrl-icon play">▶</button>
+      <input type="range" id="seekBar" class="seek-bar" value="0" min="0" max="100">
+      <button id="muteBtn" class="ctrl-icon">🔊</button>
+    </div>
+  </div>
+  <div class="bunny-corner corner-bl">
+    <svg class="bunny-svg small" viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="46" cy="30" rx="10" ry="26" fill="#1c1c24" stroke="#ffd400" stroke-width="3"/>
+      <ellipse cx="74" cy="30" rx="10" ry="26" fill="#1c1c24" stroke="#ffd400" stroke-width="3"/>
+      <ellipse cx="46" cy="34" rx="4.5" ry="16" fill="#ffd400"/>
+      <ellipse cx="74" cy="34" rx="4.5" ry="16" fill="#ffd400"/>
+      <circle cx="60" cy="80" r="38" fill="#1c1c24" stroke="#ffd400" stroke-width="3"/>
+      <ellipse cx="60" cy="54" rx="10" ry="5.5" fill="#ffd400" stroke="#000" stroke-width="1.5"/><path d="M51 54l4-3 2 2h6l2-2 4 3-4 1-2-1h-6l-2 1z" fill="#000"/><ellipse cx="46" cy="75" rx="8" ry="4" fill="#fff" transform="rotate(12 46 75)"/>
+      <ellipse cx="74" cy="75" rx="8" ry="4" fill="#fff" transform="rotate(-12 74 75)"/>
+      <ellipse cx="60" cy="86" rx="4" ry="3" fill="#ffd400"/>
+      <path d="M52 92 Q60 98 68 92" stroke="#ffd400" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      
+      
+    </svg>
+  </div>
+  <button class="arrow-btn corner-br" aria-label="Next" data-target="page-2">›</button>
+  <button class="back-btn corner-tl" aria-label="Back" data-target="b2-0">‹</button>
+</section>
+
+<!-- BOUQUET 3, PAGE 1 : LETTER -->
+<section class="page" id="b3-1">
+  <div class="letter-wrap">
+    <div class="stamp-frame">
+      <img src="photos/photo2.jpg" alt="your photo here" id="b3Photo">
+      <div class="stamp-tag">I love you</div>
+    </div>
+    <div class="letter-body">
+      <h2 class="title-script">The Sweet Letter</h2>
+      <p class="letter-text" id="letterText"></p>
+      <p class="letter-sign" id="letterSign"></p>
+    </div>
+  </div>
+  <button class="arrow-btn corner-br" aria-label="Next" data-target="page-2">›</button>
+  <button class="back-btn corner-tl" aria-label="Back" data-target="page-2">‹</button>
+</section>
+
+<!-- FINAL PAGE -->
+<section class="page" id="page-final">
+  <div class="final-hearts" id="finalHearts"></div>
+  <h2 class="final-text">
+    I will be your Jean Grey who will breathe for you<br>not MJ who will leave you in every universe <span class="heart-icon small">❤</span>
+  </h2>
+  <div class="cat-bunny-pair">
+    <svg class="pair-svg" viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg">
+      <!-- cat -->
+      <path d="M50 30 L38 8 L58 22 Z" fill="#1c1c24" stroke="#ffd400" stroke-width="3"/>
+      <path d="M78 30 L90 8 L70 22 Z" fill="#1c1c24" stroke="#ffd400" stroke-width="3"/>
+      <circle cx="64" cy="60" r="36" fill="#1c1c24" stroke="#ffd400" stroke-width="3"/>
+      <circle cx="53" cy="56" r="3.2" fill="#ffd400"/>
+      <circle cx="75" cy="56" r="3.2" fill="#ffd400"/>
+      <path d="M40 62 L50 64 M40 68 L50 66" stroke="#ffd400" stroke-width="1.6"/>
+      <path d="M88 62 L78 64 M88 68 L78 66" stroke="#ffd400" stroke-width="1.6"/>
+      <ellipse cx="64" cy="66" rx="3.5" ry="2.6" fill="#ffd400"/>
+      <path d="M56 72 Q64 78 72 72" stroke="#ffd400" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <rect x="40" y="92" width="48" height="44" rx="20" fill="#1c1c24" stroke="#ffd400" stroke-width="3"/>
+      <!-- bunny -->
+      <ellipse cx="148" cy="26" rx="8" ry="22" fill="#e62429" stroke="#000" stroke-width="3"/>
+      <ellipse cx="170" cy="26" rx="8" ry="22" fill="#e62429" stroke="#000" stroke-width="3"/>
+      <ellipse cx="148" cy="29" rx="3.5" ry="13" fill="#8f1218"/>
+      <ellipse cx="170" cy="29" rx="3.5" ry="13" fill="#8f1218"/>
+      <circle cx="159" cy="62" r="34" fill="#e62429" stroke="#000" stroke-width="3"/>
+      <circle cx="149" cy="58" r="5" fill="#fff" stroke="#000" stroke-width="2"/>
+      <circle cx="169" cy="58" r="5" fill="#fff" stroke="#000" stroke-width="2"/>
+      <ellipse cx="159" cy="68" rx="3.5" ry="2.6" fill="#000"/>
+      <path d="M151 74 Q159 80 167 74" stroke="#000" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <rect x="136" y="92" width="46" height="44" rx="20" fill="#e62429" stroke="#000" stroke-width="3"/>
+      <!-- holding paws -->
+      <circle cx="96" cy="114" r="8" fill="#e62429" stroke="#000" stroke-width="3"/>
+      <circle cx="124" cy="114" r="8" fill="#e62429" stroke="#000" stroke-width="3"/>
+    </svg>
+  </div>
+  <button class="back-btn corner-tl" aria-label="Back" data-target="page-2">‹</button>
+</section>
+
+<audio id="bgMusic" src="music/background.mp3" loop preload="metadata"></audio>
+<button id="musicBtn" class="music-btn" aria-label="Toggle music" hidden>🎵</button>
+
+<script src="script.js"></script>
+</body>
+</html>
